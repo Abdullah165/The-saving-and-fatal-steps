@@ -23,15 +23,7 @@ public class Crack : MonoBehaviour,ICollisionable
             animator.SetBool("isCrack", false);
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            animator.SetBool("isCrack", true);
-            StartCoroutine(PlatformCrack());  
-        }
-    }
-
+    
     IEnumerator PlatformCrack()
     {
         yield return new WaitForSeconds(1f);
@@ -41,6 +33,8 @@ public class Crack : MonoBehaviour,ICollisionable
 
     public void Collision()
     {
+        StartCoroutine(PlatformCrack()); 
+        animator.SetBool("isCrack", true);
         audioSource.Play();
     }
 }
