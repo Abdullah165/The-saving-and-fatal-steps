@@ -6,7 +6,7 @@ public class CountDownTimer : MonoBehaviour
 {
     [SerializeField] Text countDownTimer;
 
-    private float timeForOneRound = 90f;
+    private float timeForOneRound = 90f; //90 seconds
 
     public event EventHandler OnTimeFinished;
    
